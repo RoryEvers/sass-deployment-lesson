@@ -1,0 +1,62 @@
+@import "partials/variables";
+@import "partials/home";
+
+
+body {
+    font-size: 40px;
+}
+
+@mixin main-background($color, $padding){
+    font-size: 50px;
+    padding: $padding;
+    color: $color;
+}
+
+header {
+    @include main-background($color: blue, $padding: 100px);
+}
+
+footer{
+    @include main-background($color: red, $padding: 70px);
+}
+
+%msg-shared{
+    border: 2px solid black;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.success{
+      @extend %msg-shared;
+      color: green;
+
+}
+
+.error{
+    @extend %msg-shared;
+    color: red;
+}
+
+.warning{
+    @extend %msg-shared;
+    color: orange;
+}
+
+section {
+    background-color: $section-background-color;
+  h1 {
+    font-size: 60px;
+    &:hover {
+      color: $heading-hover;
+  }
+    
+  }
+}
+
+
+p {
+    font-style: italic;
+  span {
+    color: $span-highlight;
+}
+}
